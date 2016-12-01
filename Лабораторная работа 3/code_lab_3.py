@@ -83,9 +83,11 @@ def f_process(StorageForTextFromReading,StorageForTextFromReading_t):
         if kek==i:
             SLOVAR.pop(kek)
     print("_______",SLOVAR)
-    lel=str(input("Введите слово для добавления: "))
-    lal=str(input("Введите перевод введенного слова: "))
-    SLOVAR.update()
+    lel=str(input("Введите слово для добавления (англ): "))
+    lal=str(input("Введите перевод введенного слова (рус): "))
+##  ПОЧЕМУ-ТО ВЫДАЕТ ИМЕННО ИМЯ ПЕРЕМЕННОЙ В ПЕРЕВОД, А НЕ ЕЁ СОДЕРЖАНИЕ    
+    SLOVAR.update(lal=lel)
+    print("\n",SLOVAR)
         
 a=f_load()
 b=f_load_t()
