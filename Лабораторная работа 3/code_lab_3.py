@@ -83,8 +83,9 @@ def f_process(StorageForTextFromReading,StorageForTextFromReading_t):
         if kek==i:
             SLOVAR.pop(kek)
     print("_______",SLOVAR)
-##########    lel=str(input("Введите слово для добавления: "))   
-##########    SLOVAR.update(lel)
+    lel=str(input("Введите слово для добавления: "))
+    lal=str(input("Введите перевод введенного слова: "))
+    SLOVAR.update()
         
 a=f_load()
 b=f_load_t()
