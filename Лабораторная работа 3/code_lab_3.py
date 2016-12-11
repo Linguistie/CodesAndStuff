@@ -24,6 +24,8 @@ def f_load_t():
     return(StorageForTextFromReading_t)
 
 def f_process(StorageForTextFromReading,StorageForTextFromReading_t):
+    fileForWriting=open('txt_w.txt',"w",encoding="utf8")
+    fileForWriting.write("Слова, использованые в переводе: \n\n")
     LIST_1=[]
     LIST_2=[]
     for slovo in StorageForTextFromReading.split(","):
@@ -53,6 +55,12 @@ def f_process(StorageForTextFromReading,StorageForTextFromReading_t):
             ko+=1
             i=i.rstrip('.') 
             print(i, '-', SLOVAR[i])
+            a1=str(i)
+            a2=str(SLOVAR[i])
+            fileForWriting.write(a1)
+            fileForWriting.write(":")
+            fileForWriting.write(a2)
+            fileForWriting.write("\n")
     me=0
     him=0
     her=0
@@ -83,14 +91,15 @@ def f_process(StorageForTextFromReading,StorageForTextFromReading_t):
         if kek==i:
             SLOVAR.pop(kek)
     print("_______",SLOVAR)
-    lel=str(input("Введите слово для добавления (англ): "))
-    lal=str(input("Введите перевод введенного слова (рус): "))
+    VALUE=str(input("Введите слово для добавления (англ): "))
+    KEY=str(input("Введите перевод введенного слова (рус): "))
 ##  ПОЧЕМУ-ТО ВЫДАЕТ ИМЕННО ИМЯ ПЕРЕМЕННОЙ В ПЕРЕВОД, А НЕ ЕЁ СОДЕРЖАНИЕ    
-    SLOVAR.update(lal=lel)
+    SLOVAR[KEY] = VALUE
     print("\n",SLOVAR)
-        
+       
 a=f_load()
 b=f_load_t()
 f_process(a,b)
+
 
 print("\nServus!")
