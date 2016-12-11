@@ -61,6 +61,11 @@ def f_process(StorageForTextFromReading,StorageForTextFromReading_t):
             fileForWriting.write(":")
             fileForWriting.write(a2)
             fileForWriting.write("\n")
+    a10=" ".join(NEW_SLOVAR)
+    print("\nОбрабатываемый текст:")
+    print(a10)
+    fileForWriting.write("\nОбрабатываемый текст:")
+    fileForWriting.write(a10)
     me=0
     him=0
     her=0
@@ -69,22 +74,40 @@ def f_process(StorageForTextFromReading,StorageForTextFromReading_t):
     for i in NEW_SLOVAR:
         if i == "me":
             me+=1
-    print("Количество местоимений me: ",me)
+    print("\n\nКоличество местоимений me: ",me)
+    fileForWriting.write("\nКоличество местоимений me: ")
+    a3=str(me)
+    fileForWriting.write(a3)
     for i in NEW_SLOVAR:
         if i == "him":
             him+=1
     print("Количество местоимений him: ",him)
+    a4=str(him)
+    fileForWriting.write("\nКоличество местоимений him: ")
+    fileForWriting.write(a4)
     for i in NEW_SLOVAR:
         if i == "her":
             her+=1
     print("Количество местоимений her: ",her)
+    a5=str(her)
+    fileForWriting.write("\nКоличество местоимений her: ")
+    fileForWriting.write(a5)
     for i in NEW_SLOVAR:
         if i == "it":
             it+=1
     print("Количество местоимений it: ",it)
+    a6=str(it)
+    fileForWriting.write("\nКоличество местоимений it: ")
+    fileForWriting.write(a6)
     print("\nКоличество переведенных слов: ",ko)
+    a7=str(ko)
+    fileForWriting.write("\n\nКоличество переведенных слов: ")
+    fileForWriting.write(a7)
     NEW_SLOVAR.sort()
     print(NEW_SLOVAR)
+    fileForWriting.write("\n\nСлова текста в алфавитном порядке:\n\n")
+    a8=" ,".join(NEW_SLOVAR)
+    fileForWriting.write(a8)
     kek=str(input("Введите слово для удаления (Оставить пустым при нежелании): "))
     print(kek)
     for i in list(SLOVAR):
